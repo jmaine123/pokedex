@@ -9,14 +9,14 @@ html{
 body{
   margin: 0%;
   padding: 0%;
-  height: 100%;
-  width: 100%;
+  /* height: 100%; */
+  /* width: 100%; */
 }
 
 img{
   height:80%;
   width:100%;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 h1{
@@ -29,6 +29,7 @@ h1{
   width: 80%;
   border: 2px solid black;
   margin: 10% 10%;
+  overflow: scroll;
 
 }
 
@@ -38,8 +39,8 @@ h1{
   /* max-height: 1000px; */
   display: grid;
   grid-template-columns: 50% 5% 45%;
-  grid-template-rows: 900px;
-  margin: 20% auto;
+  grid-template-rows: 100%;
+  margin: 30% auto;
 
 }
 
@@ -64,6 +65,10 @@ h1{
 
 .container .box:nth-child(1){
   border-radius: 3%;
+}
+
+.hidden{
+  display: none;
 }
 
 #top{
@@ -146,4 +151,12 @@ button{
   background-color: yellow;
   color: green;
   font-size: 1em;
+  box-shadow: 5px 5px 10px #721b1b;
+  margin-left: 2%;
+}
+
+#list{
+  font-size: 2em;
+  list-style:none;
+  font-family:Cuprum;
 }
