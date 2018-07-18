@@ -13,6 +13,25 @@ body{
   width: 100%;
 }
 
+img{
+  height:80%;
+  width:100%;
+  border: 2px solid black;
+}
+
+h1{
+  margin-left: 10%;
+}
+
+#info{
+  background-color: #56f442;
+  height:40%;
+  width: 80%;
+  border: 2px solid black;
+  margin: 10% 10%;
+
+}
+
 
 .container{
   max-width: 70%;
