@@ -6,16 +6,16 @@
 
 allPokemon = [];
 
-function createPokemon(name,hp,attack,defense, abilities){
+function createPokemon(name, hp, attack, defense, abilities) {
 
   for (each in allPokemon) {
-     if (allPokemon[each]['name'] == iChooseYou) {
-       return;
-     }
-   }
+    if (allPokemon[each]['name'] == iChooseYou) {
+      return;
+    }
+  }
   var pokemon = {
     name: name,
-    hp:hp,
+    hp: hp,
     attack: attack,
     defense: defense,
     abilities: abilities
@@ -23,7 +23,7 @@ function createPokemon(name,hp,attack,defense, abilities){
   allPokemon.push(pokemon);
 }
 
-var trainer= {
+var trainer = {
   name: 'Jermaine',
   age: 27,
   pokeballs: allPokemon,
@@ -31,8 +31,8 @@ var trainer= {
     return allPokemon;
   },
   get: function(name) {
-    for(i = 0; i < allPokemon.length; i++){
-      if (name === this.pokeballs[i].name){
+    for (i = 0; i < allPokemon.length; i++) {
+      if (name === this.pokeballs[i].name) {
         console.log(this.pokeballs[i]);
       }
     }
@@ -41,7 +41,7 @@ var trainer= {
   }
 }
 
-function clearScreen(){
+function clearScreen() {
   var parent2 = document.getElementById('info');
   var parent1 = document.getElementById('screen');
   var pic = document.getElementById('pic');
@@ -60,7 +60,7 @@ function clearScreen(){
 }
 
 
-function updateInfoScreen(myObj){
+function updateInfoScreen(myObj) {
   var info = document.getElementById('info');
   var pokeHeader = document.createElement('h1');
   pokeHeader.id = 'pokeHeader'
@@ -75,7 +75,7 @@ function updateInfoScreen(myObj){
   var listdefense = document.createElement('li');
   var space = document.createElement('br')
   var listabilities = document.createElement('li');
-  var abilities = document.createTextNode('Abilities include ' + myObj.abilities[0].ability.name + ' '+ 'and ' + myObj.abilities[1].ability.name)
+  var abilities = document.createTextNode('Abilities include ' + myObj.abilities[0].ability.name + ' ' + 'and ' + myObj.abilities[1].ability.name)
 
 
   pokeHeader.appendChild(infoTxt)
@@ -128,12 +128,11 @@ function loadDoc(pokemon) {
 
       console.log(document.getElementById('list'))
 
-      if (document.getElementById('list') === null){
+      if (document.getElementById('list') === null) {
         updateInfoScreen(myObj);
-      }
-      else{
-      clearScreen();
-      updateInfoScreen(myObj);
+      } else {
+        clearScreen();
+        updateInfoScreen(myObj);
       }
 
 
