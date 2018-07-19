@@ -4,13 +4,15 @@
 //   page3.classList.add('hidden');
 // }
 
-allPokemon = []
-function createPokemon(name,hp,attack,defense){
+allPokemon = [];
+
+function createPokemon(name,hp,attack,defense, abilities){
   var pokemon = {
     name: name,
     hp:hp,
     attack: attack,
     defense: defense,
+    abilities: abilities
   }
   allPokemon.push(pokemon);
 }
@@ -23,9 +25,12 @@ var trainer= {
     return allPokemon;
   },
   get: function(name) {
-    for(i = 0; i < 3; i++){
-      return this.pokeballs;
+    for(i = 0; i < allPokemon.length; i++){
+      if (name === this.pokeballs[i].name){
+        console.log(this.pokeballs[i]);
+      }
     }
+
 
   }
 }
@@ -94,10 +99,17 @@ function loadDoc(pokemon) {
       header.id = 'pokemonName'
       header.style.color = 'white';
       var pic = document.createElement('img');
-      pic.id = 'pic'
+      pic.id = 'pic';
       var screen = document.getElementById('screen');
       var myObj = JSON.parse(this.responseText);
-      createPokemon(myObj.name, myObj.stats[5]['base_stat'], myObj.stats[4]['base_stat'],myObj.stats[3]['base_stat'])
+
+      var name = myObj.name;
+      var hp = myObj.stats[5]['base_stat'];
+      var attack = myObj.stats[4]['base_stat'];
+      var defense = myObj.stats[3]['base_stat'];
+      var abilities = [myObj.abilities[0].ability.name, myObj.abilities[1].ability.name]
+
+      createPokemon(name, hp, attack, defense, abilities)
       pic.src = myObj.sprites["front_shiny"];
 
       console.log(trainer);
