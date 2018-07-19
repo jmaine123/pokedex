@@ -31,22 +31,28 @@ var trainer= {
 }
 
 function clearScreen(){
-  var parent = document.getElementById('info')
+  var parent2 = document.getElementById('info');
+  var parent1 = document.getElementById('screen');
+  var pic = document.getElementById('pic');
   var lis = document.getElementById("list");
+  var header2 = document.getElementById('pokeHeader');
+  var header1 = document.getElementById('pokemonName');
 
-  parent.removeChild(lis)
+  parent2.removeChild(lis);
+  parent2.removeChild(header2);
+  parent1.removeChild(pic);
+  parent1.removeChild(header1)
 
   // for(var i = 0;i < lis.length;i++) {
   //     parent.removeChild(lis[i]);
   // }
-
-  console.log('hey');
 }
 
 
 function updateInfoScreen(myObj){
   var info = document.getElementById('info');
   var pokeHeader = document.createElement('h1');
+  pokeHeader.id = 'pokeHeader'
   var infoTxt = document.createTextNode(myObj.name);
   var list = document.createElement('ol');
   list.id = 'list';
@@ -85,6 +91,7 @@ function loadDoc(pokemon) {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var header = document.createElement('h1');
+      header.id = 'pokemonName'
       header.style.color = 'white';
       var pic = document.createElement('img');
       pic.id = 'pic'
