@@ -1,17 +1,11 @@
 html{
-  background-image: url(images/photo-1448375240586-882707db888b.jpeg);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  margin:0;
-  padding:0;
+  background: url('images/photo-1448375240586-882707db888b.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-body{
-  margin: 0%;
-  padding: 0%;
-  /* height: 100%; */
-  /* width: 100%; */
-}
 
 img{
   height:80%;
@@ -39,8 +33,9 @@ h1{
   /* max-height: 1000px; */
   display: grid;
   grid-template-columns: 50% 5% 45%;
-  grid-template-rows: 100%;
-  margin: 30% auto;
+  grid-template-rows: auto;
+  margin: 20% auto;
+  height: auto;
 
 }
 
@@ -71,7 +66,7 @@ h1{
   display: none;
 }
 
-#top{
+#hinges{
   margin-top: 50px;
   margin-bottom: 550px;
 }
@@ -80,8 +75,8 @@ h1{
   background-color: black;
   height: 80%;
   width: 70%;
-  margin: 10% auto;
-  border: 25px solid #c7cccc;
+  margin: 5% auto;
+  border: 20px solid #c7cccc;
   box-shadow: 5px 5px 10px #721b1b;
   color: white;
 }
@@ -89,7 +84,7 @@ h1{
 #page1{
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 10% 70% 20%;
+  grid-template-rows: 10% 80% 20%;
   width:100%;
   height: 100%;
 }

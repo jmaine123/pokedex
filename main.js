@@ -7,6 +7,12 @@
 allPokemon = [];
 
 function createPokemon(name,hp,attack,defense, abilities){
+
+  for (each in allPokemon) {
+     if (allPokemon[each]['name'] == iChooseYou) {
+       return;
+     }
+   }
   var pokemon = {
     name: name,
     hp:hp,
@@ -136,6 +142,7 @@ function loadDoc(pokemon) {
   xhttp.open("GET", pokemon, true);
   xhttp.send();
 }
+
 
 
 
