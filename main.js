@@ -30,12 +30,23 @@ var trainer= {
   }
 }
 
+function clearScreen(){
+  var parent = document.getElementById('info')
+  var lis = document.getElementById("list");
 
+  parent.removeChild(lis)
+
+  // for(var i = 0;i < lis.length;i++) {
+  //     parent.removeChild(lis[i]);
+  // }
+
+  console.log('hey');
+}
 
 
 function updateInfoScreen(myObj){
-  var pokeHeader = document.createElement('h1');
   var info = document.getElementById('info');
+  var pokeHeader = document.createElement('h1');
   var infoTxt = document.createTextNode(myObj.name);
   var list = document.createElement('ol');
   list.id = 'list';
@@ -48,8 +59,6 @@ function updateInfoScreen(myObj){
   var space = document.createElement('br')
   var listabilities = document.createElement('li');
   var abilities = document.createTextNode('Abilities include ' + myObj.abilities[0].ability.name + ' '+ 'and ' + myObj.abilities[1].ability.name)
-
-  console.log(abilities)
 
 
   pokeHeader.appendChild(infoTxt)
@@ -64,10 +73,6 @@ function updateInfoScreen(myObj){
   listabilities.appendChild(abilities);
   list.appendChild(listabilities)
   info.appendChild(list);
-
-
-
-
 }
 
 
@@ -75,7 +80,7 @@ jolteon = "https://pokeapi.co/api/v2/pokemon/135/"
 sharpedo = "https://pokeapi.co/api/v2/pokemon/319/"
 primeape = "https://pokeapi.co/api/v2/pokemon/057"
 
-function loadDoc(primeape) {
+function loadDoc(pokemon) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -85,7 +90,10 @@ function loadDoc(primeape) {
       pic.id = 'pic'
       var screen = document.getElementById('screen');
       var myObj = JSON.parse(this.responseText);
+      createPokemon(myObj.name, myObj.stats[5]['base_stat'], myObj.stats[4]['base_stat'],myObj.stats[3]['base_stat'])
       pic.src = myObj.sprites["front_shiny"];
+
+      console.log(trainer);
       // pic.src = 'https://orig00.deviantart.net/5c45/f/2015/311/a/9/mega_sharpedo2_by_mz15-d9ftc9p.png'
       screen.appendChild(pic);
       screen.style.backgroundColor = 'blue';
@@ -93,19 +101,25 @@ function loadDoc(primeape) {
       header.appendChild(txt);
       screen.appendChild(header);
 
+      console.log(document.getElementById('list'))
+
+      if (document.getElementById('list') === null){
+        updateInfoScreen(myObj);
+      }
+      else{
+      clearScreen();
       updateInfoScreen(myObj);
+      }
+
 
     }
   };
-  xhttp.open("GET", primeape, true);
+  xhttp.open("GET", pokemon, true);
   xhttp.send();
 }
 
-function clear(){
-  x = document.getElementsById('img')
-  x.remove();
 
-}
+
 
 
 // loadDoc("https://pokeapi.co/api/v2/pokemon/319/");
