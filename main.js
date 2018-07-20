@@ -8,17 +8,18 @@ allPokemon = [];
 
 function createPokemon(name, hp, attack, defense, abilities) {
 
-  for (each in allPokemon) {
-    if (allPokemon[each]['name'] == iChooseYou) {
-      return;
-    }
-  }
   var pokemon = {
     name: name,
     hp: hp,
     attack: attack,
     defense: defense,
     abilities: abilities
+  }
+
+  for (each in allPokemon) {
+    if (allPokemon[each]['name'] == pokemon.name) {
+      return;
+    }
   }
   allPokemon.push(pokemon);
 }
