@@ -62,6 +62,9 @@ function clearScreen() {
 
 
 function updateInfoScreen(myObj) {
+  var lights = document.getElementById('blueLight');
+  lights.style.color = "white";
+  console.log(lights);
   var info = document.getElementById('info');
   var pokeHeader = document.createElement('h1');
   pokeHeader.id = 'pokeHeader'
@@ -94,13 +97,13 @@ function updateInfoScreen(myObj) {
 }
 
 
-jolteon = "https://pokeapi.co/api/v2/pokemon/135/"
-sharpedo = "https://pokeapi.co/api/v2/pokemon/319/"
-primeape = "https://pokeapi.co/api/v2/pokemon/057"
-scizor = "https://pokeapi.co/api/v2/pokemon/212"
+jolteon = 135;
+sharpedo = 319;
+primeape = 57;
+scizor = 212;
 
-function loadDoc(pokemon) {
-  url = "https://pokeapi.co/api/v2/pokemon/135/"
+function loadDoc(number) {
+  url = "https://pokeapi.co/api/v2/pokemon/"
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -129,7 +132,6 @@ function loadDoc(pokemon) {
       header.appendChild(txt);
       screen.appendChild(header);
 
-      console.log(document.getElementById('list'))
 
       if (document.getElementById('list') === null) {
         updateInfoScreen(myObj);
@@ -141,7 +143,7 @@ function loadDoc(pokemon) {
 
     }
   };
-  xhttp.open("GET", pokemon, true);
+  xhttp.open("GET", url+number, true);
   xhttp.send();
 }
 

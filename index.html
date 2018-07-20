@@ -4,15 +4,17 @@
 <head>
   <meta charset="utf-8">
   <title></title>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"> -->
   <link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="main2.css">
+
 </head>
 
 <body>
   <div class="container">
     <div class="box" id='page1'>
       <div class='section' id="lights">
+        <div class="lightup" id="blueLight"></div>
         <div class="lightup"></div>
         <div class="lightup"></div>
         <div class="lightup"></div>
@@ -37,6 +39,10 @@
       <div id="info">
 
       </div>
+      <form action="index.html" method="post">
+        <input id="searchPokemonNumber" type="number" name="" value="">
+        <button type="button" id="SearchBtn">Catch a new Pokemon</button>
+      </form>
     </div>
 
   </div>
