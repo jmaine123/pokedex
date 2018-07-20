@@ -61,6 +61,7 @@ function clearScreen() {
 }
 
 
+
 function updateInfoScreen(myObj) {
   var lights = document.getElementById('blueLight');
   lights.style.color = "white";

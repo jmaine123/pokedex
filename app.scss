@@ -3,14 +3,15 @@ $max-height:100%;
 $main-pokedex-color: #ff3333;
 $small-lights-height: 40%;
 $small-lights-border: 1px solid black;
+$background: cover;
 
 
 html{
   background: url('images/photo-1448375240586-882707db888b.jpeg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  -webkit-background-size: $background;
+  -moz-background-size: $background;
+  -o-background-size: $background;
+  background-size: $background;
 }
 
 
@@ -178,9 +179,6 @@ button{
   list-style:none;
   font-family:Cuprum;
   overflow: hidden;
-  animation:
-  typing 3.5s steps(10, end),
-  blink-caret .10s;
 }
 
 @keyframes typing {
@@ -200,4 +198,8 @@ input{
   font-size: 20px;
   margin-bottom: 5%;
   border: $small-lights-border;
+ }
+
+ .hidden{
+   display:none;
  }

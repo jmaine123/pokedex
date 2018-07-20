@@ -142,8 +142,7 @@ button {
   font-size: 2em;
   list-style: none;
   font-family: Cuprum;
-  overflow: hidden;
-  animation: typing 3.5s steps(20, end) }
+  overflow: hidden; }
 
 @keyframes typing {
   from {
@@ -161,5 +160,8 @@ input {
   font-size: 20px;
   margin-bottom: 5%;
   border: 1px solid black; }
+
+.hidden {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */
