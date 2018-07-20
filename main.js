@@ -96,6 +96,23 @@ function updateInfoScreen(myObj) {
 }
 
 
+function updatePicScreen(myObj){
+  var header = document.createElement('h1');
+  header.id = 'pokemonName'
+  header.style.color = 'white';
+  var pic = document.createElement('img');
+  pic.id = 'pic';
+  var screen = document.getElementById('screen');
+  pic.src = myObj.sprites["front_shiny"];
+  screen.appendChild(pic);
+  screen.style.backgroundColor = 'blue';
+  var txt = document.createTextNode(myObj.name);
+  header.appendChild(txt);
+  screen.appendChild(header);
+}
+
+
+
 jolteon = 135;
 sharpedo = 319;
 primeape = 57;
@@ -119,18 +136,7 @@ function loadDoc(number) {
       createPokemon(name, hp, attack, defense, abilities)
 
 
-      var header = document.createElement('h1');
-      header.id = 'pokemonName'
-      header.style.color = 'white';
-      var pic = document.createElement('img');
-      pic.id = 'pic';
-      var screen = document.getElementById('screen');
-      pic.src = myObj.sprites["front_shiny"];
-      screen.appendChild(pic);
-      screen.style.backgroundColor = 'blue';
-      var txt = document.createTextNode(myObj.name);
-      header.appendChild(txt);
-      screen.appendChild(header);
+        updatePicScreen(myObj);
 
 
       if (document.getElementById('list') === null) {
