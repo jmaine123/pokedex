@@ -64,7 +64,6 @@ function clearScreen() {
 function updateInfoScreen(myObj) {
   var lights = document.getElementById('blueLight');
   lights.style.color = "white";
-  console.log(lights);
   var info = document.getElementById('info');
   var pokeHeader = document.createElement('h1');
   pokeHeader.id = 'pokeHeader'
@@ -102,17 +101,13 @@ sharpedo = 319;
 primeape = 57;
 scizor = 212;
 
+
 function loadDoc(number) {
   url = "https://pokeapi.co/api/v2/pokemon/"
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      var header = document.createElement('h1');
-      header.id = 'pokemonName'
-      header.style.color = 'white';
-      var pic = document.createElement('img');
-      pic.id = 'pic';
-      var screen = document.getElementById('screen');
+
       var myObj = JSON.parse(this.responseText);
 
       var name = myObj.name;
@@ -122,10 +117,15 @@ function loadDoc(number) {
       var abilities = [myObj.abilities[0].ability.name, myObj.abilities[1].ability.name]
 
       createPokemon(name, hp, attack, defense, abilities)
-      pic.src = myObj.sprites["front_shiny"];
 
-      console.log(trainer);
-      // pic.src = 'https://orig00.deviantart.net/5c45/f/2015/311/a/9/mega_sharpedo2_by_mz15-d9ftc9p.png'
+
+      var header = document.createElement('h1');
+      header.id = 'pokemonName'
+      header.style.color = 'white';
+      var pic = document.createElement('img');
+      pic.id = 'pic';
+      var screen = document.getElementById('screen');
+      pic.src = myObj.sprites["front_shiny"];
       screen.appendChild(pic);
       screen.style.backgroundColor = 'blue';
       var txt = document.createTextNode(myObj.name);
@@ -145,6 +145,11 @@ function loadDoc(number) {
   };
   xhttp.open("GET", url+number, true);
   xhttp.send();
+}
+
+function newPokemon(){
+  value = document.getElementById('searchPokemonNumber').value;
+  loadDoc(value);
 }
 
 
