@@ -1,4 +1,5 @@
 $max-width: 100%;
+$max-height:100%;
 $main-pokedex-color: #ff3333;
 
 
@@ -52,9 +53,9 @@ h1{
 
 .container .box:nth-child(2){
   background-color: darken($main-pokedex-color,20%);
-  height: 80%;
-  margin-top: 210%;
-  /* border: 5px solid black; */
+  height: 90%;
+  margin-top: 230%;
+  border: 2px solid black
 }
 
 .container .box:nth-child(3){
@@ -80,7 +81,7 @@ h1{
   background-color: black;
   height: 80%;
   width: 70%;
-  margin: 5% auto;
+  margin: 8% auto;
   border: 20px solid #c7cccc;
   box-shadow: 5px 5px 10px darken($main-pokedex-color, 30%);
   color: white;
@@ -89,9 +90,9 @@ h1{
 #page1{
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 7% 80% 13%;
+  grid-template-rows: 10% 70% 20%;
   width:$max-width;
-  height: $max-width;
+  height: 100%;
 }
 
 
@@ -134,19 +135,15 @@ h1{
 
 #keys{
   display:grid;
-  grid-template-columns: 40% 40%;
+  grid-template-columns: 15% 15% 15% 15%;
   grid-template-rows: 50%;
-  grid-gap: 10%;
-  margin:0 auto;
+  grid-gap: 5%;
+  margin:0 10%;
   width:$max-width;
 }
 
-#keys .key-button{
-  margin: 10% 20%;
-}
-
 button{
-  height: $max-width;
+  height: 100%;
   width: $max-width;
   background-color: yellow;
   color: green;
@@ -159,4 +156,9 @@ button{
   font-size: 2em;
   list-style:none;
   font-family:Cuprum;
+}
+
+.pokemonBall{
+  box-shadow: 0px 2px 1px darken($main-pokedex-color, 50%);
+  box-shadow: inset
 }

@@ -97,8 +97,10 @@ function updateInfoScreen(myObj) {
 jolteon = "https://pokeapi.co/api/v2/pokemon/135/"
 sharpedo = "https://pokeapi.co/api/v2/pokemon/319/"
 primeape = "https://pokeapi.co/api/v2/pokemon/057"
+scizor = "https://pokeapi.co/api/v2/pokemon/212"
 
 function loadDoc(pokemon) {
+  url = "https://pokeapi.co/api/v2/pokemon/135/"
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
