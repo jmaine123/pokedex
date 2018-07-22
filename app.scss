@@ -31,7 +31,7 @@ h1{
   width: $max-width - 20%;
   border: 3px solid black;
   margin: 10% 10%;
-  overflow: scroll;
+  overflow: auto;
 
 }
 
@@ -178,7 +178,6 @@ button{
   font-size: 2em;
   list-style:none;
   font-family:Cuprum;
-  overflow: hidden;
 }
 
 @keyframes typing {

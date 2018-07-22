@@ -27,7 +27,7 @@ h1 {
   display: grid;
   grid-template-columns: 40% 3% 35%;
   grid-template-rows: auto;
-  margin: 0% auto;
+  margin: 20% auto;
   height: auto; }
 
 .container .box {
@@ -141,8 +141,7 @@ button {
 #list {
   font-size: 2em;
   list-style: none;
-  font-family: Cuprum;
-  overflow: hidden; }
+  font-family: Cuprum; }
 
 @keyframes typing {
   from {

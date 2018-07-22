@@ -77,13 +77,17 @@ function updateInfoScreen(myObj) {
   var listattack = document.createElement('li');
   var defense = document.createTextNode('defense: ' + myObj.stats[3]['base_stat']);
   var listdefense = document.createElement('li');
-  var space = document.createElement('br')
+  var space = document.createElement('br');
   var listabilities = document.createElement('li');
   var abilities = document.createTextNode('Abilities include ' + myObj.abilities[0].ability.name + ' ' + 'and ' + myObj.abilities[1].ability.name)
+  var trainerName = document.createTextNode('Trainer: ' + 'Jermaine');
+  var trainer = document.createElement('li');
 
 
   pokeHeader.appendChild(infoTxt)
   info.appendChild(pokeHeader);
+  trainer.appendChild(trainerName);
+  list.appendChild(trainer);
   listhp.appendChild(hp);
   list.appendChild(listhp);
   listattack.appendChild(attack);
@@ -169,7 +173,10 @@ function updatebackground(myObj){
   }
 
   else if(myObj.name === 'primeape'){
-      html.style.backgroundImage = "url('https://media.istockphoto.com/photos/boxing-empty-professional-ring-with-crowd-picture-id619736822?k=6&m=619736822&s=612x612&w=0&h=Plr-dFepxe5gYAhJusL7Z6SebTi1IluFjEGhCXOUxz8=')"
+    html.style.backgroundImage = "url('https://media.istockphoto.com/photos/boxing-empty-professional-ring-with-crowd-picture-id619736822?k=6&m=619736822&s=612x612&w=0&h=Plr-dFepxe5gYAhJusL7Z6SebTi1IluFjEGhCXOUxz8=')"
+  }
+  else if(myObj.name === 'jolteon') {
+    html.style.backgroundImage = "url('http://bestanimations.com/Nature/Storms/animated-lighning-bolt-strike-storm-gif-1.gif')"
   }
 
   else if (myObj.types.name === 'fire'){
