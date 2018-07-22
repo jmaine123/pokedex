@@ -136,7 +136,7 @@ function loadDoc(number) {
 
       createPokemon(name, hp, attack, defense, abilities)
 
-
+        updatebackground(myObj);
         updatePicScreen(myObj);
 
 
@@ -157,6 +157,27 @@ function loadDoc(number) {
 function newPokemon(){
   value = document.getElementById('searchPokemonNumber').value;
   loadDoc(value);
+}
+
+function updatebackground(myObj){
+  html = document.getElementById('background');
+  if (myObj.name === 'sharpedo'){
+    html.style.backgroundImage = "url('images/ocean.gif')";
+  }
+  else if (myObj.name === 'scizor') {
+    html.style.backgroundImage = "url('https://avatars.mds.yandex.net/get-pdb/480866/c37ee6c5-e8c8-4e2e-9563-29e2cebd40a7/orig')";
+  }
+
+  else if(myObj.name === 'primeape'){
+      html.style.backgroundImage = "url('https://media.istockphoto.com/photos/boxing-empty-professional-ring-with-crowd-picture-id619736822?k=6&m=619736822&s=612x612&w=0&h=Plr-dFepxe5gYAhJusL7Z6SebTi1IluFjEGhCXOUxz8=')"
+  }
+
+  else if (myObj.types.name === 'fire'){
+    console.log(myObj.types)
+      html.style.backgroundImage = "url('https://thumbs.gfycat.com/SeriousSpiritedAmericanrobin-max-1mb.gif')"
+  }
+
+
 }
 
 
