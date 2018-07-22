@@ -102,15 +102,31 @@ function updateInfoScreen(myObj) {
 
 
 function updatePicScreen(myObj){
+  screen = document.getElementById('screen');
+  screen.style.backgroundImage = 'url(images/elements.jpg)';
+  var light = document.getElementById('blueLight');
   var header = document.createElement('h1');
   header.id = 'pokemonName'
   header.style.color = 'white';
   var pic = document.createElement('img');
   pic.id = 'pic';
   var screen = document.getElementById('screen');
-  pic.src = myObj.sprites["front_shiny"];
+    if (myObj.name ==='primeape'){
+      pic.src = 'images/primeape_punching.gif';
+    }
+    else if(myObj.name ==='sharpedo'){
+      pic.src = 'images/sharpedo_swimming.gif';
+    }
+    else if(myObj.name ==='scizor'){
+      pic.src = 'images/scizor.gif';
+    }
+    else if(myObj.name ==='jolteon'){
+      pic.src = 'images/jolteon_shock.gif';
+    }
+    else{
+    pic.src = myObj.sprites["front_shiny"];
+    }
   screen.appendChild(pic);
-  screen.style.backgroundColor = 'blue';
   var txt = document.createTextNode(myObj.name);
   header.appendChild(txt);
   screen.appendChild(header);
@@ -151,7 +167,7 @@ function loadDoc(number) {
         updateInfoScreen(myObj);
       }
 
-
+      console.log(myObj.types[0].type.name)
     }
   };
   xhttp.open("GET", url+number, true);
@@ -179,9 +195,16 @@ function updatebackground(myObj){
     html.style.backgroundImage = "url('http://bestanimations.com/Nature/Storms/animated-lighning-bolt-strike-storm-gif-1.gif')"
   }
 
-  else if (myObj.types.name === 'fire'){
+  else if (myObj.types[0].type.name === 'fire'){
     console.log(myObj.types)
       html.style.backgroundImage = "url('https://thumbs.gfycat.com/SeriousSpiritedAmericanrobin-max-1mb.gif')"
+  }
+  // else if (myObj.types[0].type.name === 'ghost'){
+  //   console.log(myObj.types)
+  //     html.style.backgroundImage = "url('images/ghost_element.webp')"
+  // }
+  else{
+    html.style.backgroundImage = "url('images/photo-1448375240586-882707db888b.jpeg')"
   }
 
 
