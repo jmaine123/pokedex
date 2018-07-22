@@ -82,6 +82,8 @@ function updateInfoScreen(myObj) {
   var abilities = document.createTextNode('Abilities include ' + myObj.abilities[0].ability.name + ' ' + 'and ' + myObj.abilities[1].ability.name)
   var trainerName = document.createTextNode('Trainer: ' + 'Jermaine');
   var trainer = document.createElement('li');
+  var weight = document.createTextNode('weight: ' + myObj.weight + ' lb');
+  var PokeWeight = document.createElement('li');
 
 
   pokeHeader.appendChild(infoTxt)
@@ -94,6 +96,8 @@ function updateInfoScreen(myObj) {
   list.appendChild(listattack);
   listdefense.appendChild(defense);
   list.appendChild(listdefense)
+  PokeWeight.appendChild(weight);
+  list.appendChild(PokeWeight);
   list.appendChild(space);
   listabilities.appendChild(abilities);
   list.appendChild(listabilities)
