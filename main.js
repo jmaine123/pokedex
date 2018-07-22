@@ -134,6 +134,8 @@ function updatePicScreen(myObj){
 
 
 
+
+
 jolteon = 135;
 sharpedo = 319;
 primeape = 57;
@@ -188,10 +190,10 @@ function updatebackground(myObj){
     html.style.backgroundImage = "url('https://avatars.mds.yandex.net/get-pdb/480866/c37ee6c5-e8c8-4e2e-9563-29e2cebd40a7/orig')";
   }
 
-  else if(myObj.name === 'primeape'){
+  else if(myObj.types[0].type.name === 'fighting'){
     html.style.backgroundImage = "url('https://media.istockphoto.com/photos/boxing-empty-professional-ring-with-crowd-picture-id619736822?k=6&m=619736822&s=612x612&w=0&h=Plr-dFepxe5gYAhJusL7Z6SebTi1IluFjEGhCXOUxz8=')"
   }
-  else if(myObj.name === 'jolteon') {
+  else if(myObj.types[0].type.name === 'electric') {
     html.style.backgroundImage = "url('http://bestanimations.com/Nature/Storms/animated-lighning-bolt-strike-storm-gif-1.gif')"
   }
 
@@ -199,10 +201,22 @@ function updatebackground(myObj){
     console.log(myObj.types)
       html.style.backgroundImage = "url('https://thumbs.gfycat.com/SeriousSpiritedAmericanrobin-max-1mb.gif')"
   }
-  // else if (myObj.types[0].type.name === 'ghost'){
-  //   console.log(myObj.types)
-  //     html.style.backgroundImage = "url('images/ghost_element.webp')"
-  // }
+  else if (myObj.types[0].type.name === 'water'){
+    console.log(myObj.types)
+      html.style.backgroundImage = "url('images/ocean.gif')"
+  }
+  else if (myObj.types[0].type.name === 'ground'){
+    console.log(myObj.types)
+      html.style.backgroundImage = "url('https://1x.com/images/user/0c7c41b495981ad727d168574967697b-hd2.jpg')"
+  }
+  else if (myObj.types[0].type.name === 'flying'){
+    console.log(myObj.types)
+      html.style.backgroundImage = "url('https://i.imgur.com/QUd1Q2E.gif')"
+  }
+  else if (myObj.types[0].type.name === 'grass'){
+    console.log(myObj.types)
+      html.style.backgroundImage = "url('https://avatars.mds.yandex.net/get-pdb/480866/c37ee6c5-e8c8-4e2e-9563-29e2cebd40a7/orig')"
+  }
   else{
     html.style.backgroundImage = "url('images/photo-1448375240586-882707db888b.jpeg')"
   }
