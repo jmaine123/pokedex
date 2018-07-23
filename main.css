@@ -104,15 +104,15 @@ h1 {
   height: 80%;
   animation-name: blinkinglight;
   animation-iteration-count: infinite;
-  animation-duration: 2s;
-  animation-fill-mode: both; }
+  animation-duration: 3s;
+  animation-fill-mode: forwards; }
 
 @-webkit-keyframes blinkinglight {
   0% {
     background-color: #009999; }
-  20% {
+  50% {
     background-color: #00ffff; }
-  60% {
+  100% {
     background-color: white; } }
 #lights .lightup:nth-child(2) {
   background-color: red;
@@ -180,8 +180,7 @@ input {
   font-size: 20px;
   margin-bottom: 5%;
   border: 1px solid black;
-  background-color: blue;
- }
+  background-color: #00ffff; }
 
 .hidden {
   display: none; }
