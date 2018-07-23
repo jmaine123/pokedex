@@ -84,6 +84,8 @@ function updateInfoScreen(myObj) {
   var trainer = document.createElement('li');
   var weight = document.createTextNode('weight: ' + myObj.weight + ' lb');
   var PokeWeight = document.createElement('li');
+  var type = document.createTextNode('Type: ' + myObj.types[0].type.name);
+  var PokeType = document.createElement('li');
 
 
   pokeHeader.appendChild(infoTxt)
@@ -96,6 +98,8 @@ function updateInfoScreen(myObj) {
   list.appendChild(listattack);
   listdefense.appendChild(defense);
   list.appendChild(listdefense)
+  PokeType.appendChild(type);
+  list.appendChild(PokeType);
   PokeWeight.appendChild(weight);
   list.appendChild(PokeWeight);
   list.appendChild(space);
