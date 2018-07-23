@@ -221,6 +221,10 @@ function updatebackground(myObj){
     console.log(myObj.types)
       html.style.backgroundImage = "url('https://avatars.mds.yandex.net/get-pdb/480866/c37ee6c5-e8c8-4e2e-9563-29e2cebd40a7/orig')"
   }
+  else if (myObj.types[0].type.name === 'psychic'){
+    console.log(myObj.types)
+      html.style.backgroundImage = "url('https://i.giphy.com/media/DLr0AQNRApP8I/giphy.webp')"
+  }
   else{
     html.style.backgroundImage = "url('images/photo-1448375240586-882707db888b.jpeg')"
   }
