@@ -5,6 +5,7 @@ $small-lights-height: 40%;
 $small-lights-border: 1px solid black;
 $background: cover;
 $button-shadow:inset 0 0 10px;
+$blue-light:#00ffff;
 
 
 html{
@@ -131,10 +132,26 @@ h1{
 
 
 #lights .lightup:nth-child(1){
-  background-color: #00ffff;
+  background-color: $blue-light;
   border-radius: 90%;
   border: 5px solid #c7cccc;
   height: 80%;
+  animation-name: blinkinglight;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes blinkinglight {
+0% {
+  background-color: darken($blue-light, 20%);
+}
+50% {
+  background-color: $blue-light;
+}
+100% {
+  background-color: white;
+}
 }
 
 #lights .lightup:nth-child(2){
