@@ -171,12 +171,18 @@ h1{
 
 button{
   height: 100%;
-  width: $max-width - 20;
+  width: $max-width - 40;
   background-color: yellow;
   color: green;
   font-size: 1em;
   box-shadow: 5px 5px 10px darken($main-pokedex-color, 30%);
-  margin-left: 10%;
+  margin-left: 23%;
+}
+
+button:hover{
+  background-color: green;
+  color: yellow;
+
 }
 
 #list{

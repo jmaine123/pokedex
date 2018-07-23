@@ -134,12 +134,16 @@ h1 {
 
 button {
   height: 100%;
-  width: 80%;
+  width: 60%;
   background-color: yellow;
   color: green;
   font-size: 1em;
   box-shadow: 5px 5px 10px #990000;
-  margin-left: 10%; }
+  margin-left: 23%; }
+
+button:hover {
+  background-color: green;
+  color: yellow; }
 
 #list {
   font-size: 2em;
