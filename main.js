@@ -3,6 +3,7 @@
 //
 //   page3.classList.add('hidden');
 // }
+console.log("finally")
 
 allPokemon = [];
 
